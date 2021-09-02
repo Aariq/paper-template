@@ -28,7 +28,6 @@ output:
       pandoc_args:
       - --lua-filter=templates/scholarly-metadata.lua
       - --lua-filter=templates/author-info-blocks.lua
-      - --lua-filter=templates/pagebreak.lua
       #- -Fpandoc-crossref #required for cross-ref equations
 linkcolor: blue
 bibliography: references.bib
