@@ -15,9 +15,10 @@ knitr::opts_chunk$set(
 
 This is a research compendium template geared towards producing a manuscript output as a Word document reproducibly using the `targets` package for workflow management.
 See the [`targets` documentation](https://docs.ropensci.org/targets/) for more information on how to program analyses in this style.
-I've found that writing `paper.Rmd` using RStudio's visual editor and automatic text wrapping (with each sentence as a new line) works best for version control and collaboration with git and GitHub.
-The `renv` package my also be useful for collaboration to keep package version synced across collaborators.
-Before submitting the manuscript, I like to archive my GitHub repository with Zenodo and add a DOI badge to the README, and a link to the Zenodo archive to the Data Availability Statement.
+I've found that writing `paper.Rmd` using RStudio's [visual markdown editor](https://rstudio.github.io/visual-markdown-editing/) and automatic text wrapping (with each sentence as a new line) works best for version control and collaboration with git and GitHub.
+The visual editor also integrates seamlessly with [Zotero](https://www.zotero.org/) for adding in-text citations and bibliographies.
+The [`renv` package](<https://rstudio.github.io/renv/articles/renv.html>) my also be useful for collaboration to keep package version synced across collaborators.
+Before submitting the manuscript, I like to [archive my GitHub repository with Zenodo](https://guides.github.com/activities/citable-code/) and add a DOI badge to the README, and a link to the Zenodo archive to the Data Availability Statement.
 In the `review` directory, you'll find my preferred way of structuring response to reviewers complete with the ability to cross-reference responses to avoid repeating yourself.
 
 Readme text for *your* repository below:
