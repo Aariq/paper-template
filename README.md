@@ -19,12 +19,8 @@ You can download the compendium as a zip from from this URL:
 
 To run the compendium and reproduce all outputs:
 
--   Open the project in RStudio by double-clicking the
-    `HeliconiaDemography.Rproj` file.
--   Install the [`renv`
-    package](https://rstudio.github.io/renv/articles/renv.html) if it’s
-    not already installed and run `renv::restore()` to install all
-    package dependencies.
+-   Open the project in RStudio by double-clicking the `.Rproj` file.
+-   Install packages listed in `packages.R`
 -   Install the [`targets` package](https://docs.ropensci.org/targets/).
 -   Run `targets::tar_make()` or `targets::tar_make_clustermq()` from
     the R console to run all code and produce all outputs.
