@@ -128,17 +128,16 @@ pandoc.table(
   head(iris),
   justify = c("right", "right", "right", "right", "left"),
   full_width = FALSE,
-  caption = "(\\#tab:example-table) An table must include the table tag in order to cross-reference it correctly."
+  caption = "(\\#tab:example-table) A table must include the table tag in order to cross-reference it correctly."
 )
 ```
 
 # Figures
 
 ```{r}
-cap <- "A caption for an example figure"
-```
-
-```{r example-figure, fig.cap=cap}
+#| example-figure,
+#| fig.cap = "A caption for an example figure. It can be long and span mutiple
+#|   lines like this."
 plot(cars)
 ```
 
