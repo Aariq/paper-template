@@ -69,16 +69,6 @@ knitr::opts_chunk$set(
 library(targets)
 ```
 
-```{r load-targets}
-## Load necessary targets here
-# withr::with_dir(here::here(), {
-#   tar_load(c(
-#     target1,
-#     target2
-#   ))
-# })
-```
-
 <!-- The actual document text starts here: -->
 
 \pagebreak
