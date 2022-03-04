@@ -27,6 +27,8 @@ Readme text for *your* repository below:
 
 <!-- badges: start -->
 
+<!-- DOI badges go here -->
+
 <!-- badges: end -->
 
 This repository contains data and code for a manuscript by \_\_\_\_\_\_ written for submission to \_\_\_\_\_\_ tentatively titled: \_\_\_\_\_.

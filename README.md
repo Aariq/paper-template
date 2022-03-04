@@ -29,6 +29,7 @@ Readme text for *your* repository below:
 ------------------------------------------------------------------------
 
 <!-- badges: start -->
+<!-- DOI badges go here -->
 <!-- badges: end -->
 
 This repository contains data and code for a manuscript by \_\_\_\_\_\_
