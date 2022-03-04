@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          fectch-depth: 0
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
