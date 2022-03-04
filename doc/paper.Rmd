@@ -82,6 +82,7 @@ Abstract text.
 # Introduction
 
 Introduction with an in-text citation [@scottInteractiveEffectsDrought2019].
+Another sentence.
 
 # Methods
 
