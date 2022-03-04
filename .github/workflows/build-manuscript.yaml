@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          fectch-depth: 2 # This is important to set for `git diff-tree` to work below
+          fetch-depth: 2 # This is important to set for `git diff-tree` to work below
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
@@ -43,5 +43,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git commit ${RMD_PATH[*]/.Rmd/.md} -m 'Re-build Rmarkdown files' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          git add doc/paper.docx
+          git commit doc/paper.docx -m 'Re-build paper.docx' || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
