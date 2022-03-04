@@ -3,23 +3,23 @@
 on:
   push:
     branches: [main, master]
-    # paths: ['**.Rmd']
+    paths: ['**.Rmd']
   pull_request:
     branches: [main, master]
-    # paths: ['**.Rmd']
+    paths: ['**.Rmd']
 
 name: build-manuscript
 
 jobs:
   build-manuscript:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          fectch-depth: 0
+          fectch-depth: 2 # This is important to set for `git diff-tree` to work below
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
@@ -30,8 +30,17 @@ jobs:
           r-version: "release"
       - uses: r-lib/actions/setup-renv@v2
       
-      - name: Render .Rmd files
+      - name: install package rmarkdown
+        run: Rscript -e 'if(!require("rmarkdown", quietly=TRUE)){renv::install("rmarkdown")}'
+      
+      - name: Render Rmarkdown files
         run: |
-          Rscript -e 'rmarkdown::render("doc/paper.Rmd")'
-     
-        
+          RMD_PATH=($(git diff-tree --no-commit-id --name-only -r HEAD | grep '[.]Rmd$'))
+          Rscript -e 'for (file in commandArgs(TRUE)) rmarkdown::render(file)' ${RMD_PATH[*]}
+      
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit ${RMD_PATH[*]/.Rmd/.md} -m 'Re-build Rmarkdown files' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
