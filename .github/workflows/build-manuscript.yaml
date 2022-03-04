@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 2 # This is important to set for `git diff-tree` to work below
 
       - name: Setup pandoc
         uses: r-lib/actions/setup-pandoc@v2
