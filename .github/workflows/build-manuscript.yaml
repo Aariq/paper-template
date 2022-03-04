@@ -37,7 +37,7 @@ jobs:
       
       - name: Render paper.Rmd to Word
         run: |
-          rmarkdown::render("doc/paper.Rmd")
+          Rscript -e 'rmarkdown::render("doc/paper.Rmd")'
       
       - name: Commit results
         run: |
