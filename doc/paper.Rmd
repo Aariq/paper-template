@@ -85,7 +85,7 @@ Introduction with an in-text citation [@scottInteractiveEffectsDrought2019].
 
 # Methods
 
-Methods text
+Methods text.
 
 # Results
 
