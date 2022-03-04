@@ -41,9 +41,6 @@ _targets/
 # html
 *.html
 
-# renv via capsule
-renv/
-
 # Word
 *.docx
 !doc/templates/template.docx
