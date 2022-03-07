@@ -75,7 +75,7 @@ library(targets)
 
 # Abstract
 
-Abstract text.
+Abstract text
 
 \pagebreak
 
