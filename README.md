@@ -24,6 +24,15 @@ Availability Statement. In the `review` directory, you’ll find my
 preferred way of structuring response to reviewers complete with the
 ability to cross-reference responses to avoid repeating yourself.
 
+**GithHub Actions** This template also uses [GitHub
+actions](https://github.com/features/actions) to automatically render a
+.html version of the manuscript every time an edit to docs/paper.Rmd is
+made. If [GitHub pages](https://pages.github.com/) are active, then the
+rendered draft is viewable at \<username\>.github.io/\<repository
+name\>/paper.html. The workflow for this lives in
+.github/workflows/build-manuscript.yaml and can be disabled on GitHub in
+the “Actions” tab.
+
 Readme text for *your* repository below:
 
 ------------------------------------------------------------------------
