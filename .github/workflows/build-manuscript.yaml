@@ -34,8 +34,16 @@ jobs:
         run: Rscript -e 'if(!require("rmarkdown", quietly=TRUE)){renv::install("rmarkdown")}'
       
       - name: Render paper.Rmd to Word
+        shell: Rscript {0}
         run: |
-          Rscript -e 'rmarkdown::render("doc/paper.Rmd")'
+          rmarkdown::render("doc/paper.Rmd",
+          output_format = bookdown::html_document2(
+            number_sections = FALSE,
+            fig_caption = TRUE, 
+            pandoc_args = list(
+             "--lua-filter=templates/scholarly-metadata.lua",
+             "--lua-filter=templates/author-info-blocks.lua"
+          )))
       
       - name: Commit results
         run: |
