@@ -49,6 +49,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add doc/paper.docx
-          git commit doc/paper.docx -m 'Re-build paper.docx' || echo "No changes to commit"
+          git add doc/paper.html
+          git commit doc/paper.html -m 'Re-build paper.html' || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
