@@ -33,10 +33,10 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'if(!require("rmarkdown", quietly=TRUE)){renv::install("rmarkdown")}'
       
-      - name: Render paper.Rmd to Word
+      - name: Render paper.Rmd to html
         shell: Rscript {0}
         run: |
-          rmarkdown::render("doc/paper.Rmd",
+          rmarkdown::render("docs/paper.Rmd",
           output_format = bookdown::html_document2(
             number_sections = FALSE,
             fig_caption = TRUE, 
@@ -49,6 +49,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add doc/paper.html
-          git commit doc/paper.html -m 'Re-build paper.html' || echo "No changes to commit"
+          git add docs/paper.html
+          git commit docs/paper.html -m 'Re-build paper.html' || echo "No changes to commit"
           git push origin master || echo "No changes to commit"
